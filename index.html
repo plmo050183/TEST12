@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"secondary-container":"#748ffe","surface-container-lowest":"#ffffff","on-secondary-fixed":"#001453","on-tertiary-container":"#c7fffb","tertiary-container":"#007d79","background":"#fbf9f8","primary":"#004ccd","outline-variant":"#c3c6d8","on-tertiary":"#ffffff","surface-container-high":"#eae8e7","surface-container":"#efeded","error":"#ba1a1a","inverse-surface":"#303030","inverse-primary":"#b4c5ff","surface-container-highest":"#e4e2e2","tertiary-fixed-dim":"#78d6d1","on-surface":"#1b1c1c","on-tertiary-fixed":"#00201f","on-background":"#1b1c1c","on-primary":"#ffffff","on-primary-fixed-variant":"#003da9","tertiary":"#00625f","inverse-on-surface":"#f2f0f0","on-secondary-container":"#002380","secondary-fixed-dim":"#b8c4ff","surface-container-low":"#f5f3f3","outline":"#737687","on-tertiary-fixed-variant":"#00504d","surface-dim":"#dbd9d9","on-surface-variant":"#424656","secondary":"#3855c1","tertiary-fixed":"#95f3ed","on-error":"#ffffff","on-primary-fixed":"#00174c","surface-tint":"#0052dd","surface-bright":"#fbf9f8","primary-fixed-dim":"#b4c5ff","secondary-fixed":"#dde1ff","on-secondary-fixed-variant":"#1a3ca8","on-error-container":"#93000a","surface":"#fbf9f8","on-secondary":"#ffffff","on-primary-container":"#f3f3ff","surface-variant":"#e4e2e2","primary-fixed":"#dbe1ff","error-container":"#ffdad6","primary-container":"#0f62fe"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1rem","space-xs":"0.25rem","margin-desktop":"2rem","space-md":"1rem","gutter-desktop":"1.5rem","margin":"1rem","space-xl":"2rem","space-lg":"1.5rem","space-sm":"0.5rem"},"fontFamily":{"body-lg":["IBM Plex Sans"],"display-lg-mobile":["IBM Plex Sans"],"headline-md":["IBM Plex Sans"],"body-md":["IBM Plex Sans"],"caption":["IBM Plex Sans"],"headline-lg":["IBM Plex Sans"],"label-md":["IBM Plex Sans"],"label-sm":["IBM Plex Sans"],"display-lg":["IBM Plex Sans"],"headline-sm":["IBM Plex Sans"],"body-sm":["IBM Plex Sans"],"headline-xl":["IBM Plex Sans"],"headline-xl-mobile":["IBM Plex Sans"],"metric-display":["IBM Plex Sans"]},"fontSize":{"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"display-lg-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"caption":["11px",{"lineHeight":"14px","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"500"}],"label-md":["14px",{"lineHeight":"18px","fontWeight":"500"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"display-lg":["42px",{"lineHeight":"50px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-xl-mobile":["24px",{"lineHeight":"32px","fontWeight":"600"}],"metric-display":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"300"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 bg-primary flex items-center justify-center"><span class="text-on-primary font-headline-sm text-headline-sm tracking-tighter">GM</span></div><span class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-tight">한국사업장</span></div><div class="h-4 w-px bg-surface-container-highest hidden sm:block"></div><span class="hidden lg:inline-flex items-center px-space-sm py-space-xs bg-surface-container-high text-on-surface-variant font-caption text-caption tracking-normal">기준일: 2026년 11월 15일 | IBM Carbon Design System 기반 인포그래픽 대시보드</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs"><button class="h-8 px-space-sm flex items-center gap-space-xs bg-surface-container text-on-surface hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-sm text-label-sm" type="button"><span class="material-symbols-outlined text-[16px]">filter_alt</span>필터</button><button class="h-8 px-space-sm flex items-center gap-space-xs bg-surface-container text-on-surface hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-sm text-label-sm" type="button"><span class="material-symbols-outlined text-[16px]">download</span>내보내기</button><button class="h-8 px-space-sm flex items-center gap-space-xs bg-surface-container text-on-surface hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-sm text-label-sm" type="button"><span class="material-symbols-outlined text-[16px]">print</span>인쇄</button></div><div class="h-4 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-sm"><span class="hidden md:block text-right"><span class="block font-label-sm text-label-sm text-on-surface leading-tight">경영기획본부</span><span class="block font-caption text-caption text-on-surface-variant leading-tight">Executive Analyst</span></span><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/ALJJyrAxHCw52UsVGP7ptuiv-04uXLLTQEa-681mSEpGU8m5DhE2Yy6X8CWUuqp5Jlzgk9XlnoFG3nUb7uxEtkgAKgF9g5J1ZhViv1F8M8engcwGq4lwhYZxHzMHOhEkOW_kiZH6ICKtMqk-9BUsg9REu-Vo-GYRH184bF8EDCxeE6JuAD4IH_7ztibUHd0uAy34rTnnzJ6jTECclPlBk5ZIv-dWPzm9Wpatsj4ZhBeKn1o"/></div></div></div></header><aside class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex flex-col justify-between"><div class="py-space-md"><div class="px-space-md pb-space-xs mb-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">전략 분석 영역</span></div><nav class="flex flex-col gap-space-xs px-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-headline-sm" data-path="overview-kpi" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span>개요 및 KPI</a><a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="financial-performance" href="#"><span class="material-symbols-outlined text-[20px]">account_balance</span>재무 성과</a><a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="production-investment" href="#"><span class="material-symbols-outlined text-[20px]">precision_manufacturing</span>생산 및 투자</a><a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="sales-brand" href="#"><span class="material-symbols-outlined text-[20px]">directions_car</span>판매 및 브랜드</a><a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="rd-service" href="#"><span class="material-symbols-outlined text-[20px]">engineering</span>R&amp;D 및 서비스</a><a class="flex items-center gap-space-sm px-space-md py-space-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="risk-challenges" href="#"><span class="material-symbols-outlined text-[20px]">warning</span>리스크 및 과제</a></nav></div><div class="p-space-md bg-surface-container-low"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm text-label-sm text-on-surface">시스템 상태</span><span class="inline-flex items-center px-space-xs py-0.5 bg-surface-container text-on-surface font-caption text-caption">연동 완료</span></div><p class="font-caption text-caption text-on-surface-variant">ERP &amp; SCM Live Feed Active</p></div></aside><div class="pl-64"><main class="relative pt-16 w-full px-gutter-desktop min-h-screen bg-surface"><div class="flex flex-col w-full pb-16 space-y-8">
+<!-- SECTION 1: EXECUTIVE BANNER & CORE THESIS -->
+<div class="w-full bg-surface-container-lowest p-6 shadow-sm flex flex-col space-y-4">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="inline-flex items-center px-2 py-0.5 bg-primary text-on-primary font-caption text-caption tracking-wider uppercase font-semibold">Executive Strategy Report</span>
+<span class="inline-flex items-center px-2 py-0.5 bg-error-container text-on-error-container font-caption text-caption font-semibold">핵심 유의: 9BXX-2 국내 배정 미확정</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">GM 한국사업장 경영 현황 및 내수 전략</h1>
+<p class="font-body-md text-on-surface-variant mt-1">기준일: 2026년 11월 15일 | 글로벌 생산 거점 경쟁력 및 중장기 지속가능성 종합 평가</p>
+</div>
+<div class="flex items-center gap-2 self-start lg:self-center">
+<span class="inline-flex items-center px-3 py-1 bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary mr-2"></span>기준 데이터: 2022~2026.10 공시·실적
+        </span>
+</div>
+</div>
+<!-- Core Judgment Callout Banner -->
+<div class="bg-surface-container-low p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-l-4 border-primary">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[28px] mt-0.5">policy</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">핵심 판단: 생산 경쟁력은 유지, 지속가능성은 검증 필요</span>
+<span class="px-2 py-0.5 bg-surface-container-high text-on-surface-variant font-caption text-caption">검증 필요</span>
+</div>
+<p class="font-body-md text-on-surface-variant mt-0.5">
+            글로벌 생산·수출 거점으로서의 입지는 확인되나, 2028년 이후 지속가능성은 차세대 프로그램 배정(9BXX-2 국내 배정 미확정)과 본업 수익성 방어로 실증되어야 합니다.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<div class="text-right">
+<span class="block font-caption text-caption text-on-surface-variant">2018 기본협약 만료</span>
+<span class="block font-label-md text-label-md text-error font-semibold">D-18개월 (2028.05)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 2: TOP 4 CORE KPI METRIC CARDS -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest p-4 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">2025년 연간 매출액</span>
+<span class="inline-flex items-center px-1.5 py-0.5 bg-error-container text-on-error-container font-caption text-caption font-semibold">-12.3% YoY</span>
+</div>
+<div class="flex items-baseline gap-1 my-1">
+<span class="font-metric-display text-metric-display text-on-surface font-light">12조 6,128</span>
+<span class="font-body-md text-body-md text-on-surface-variant">억 원</span>
+</div>
+<div class="pt-2 bg-surface-container-low px-2 py-1 mt-2 flex items-center justify-between">
+<span class="font-caption text-caption text-on-surface-variant">영업이익: 4,898억 원</span>
+<span class="font-caption text-caption text-error font-semibold">-63.9% 감익</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest p-4 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">생산시설 현대화 투자</span>
+<span class="inline-flex items-center px-1.5 py-0.5 bg-primary-fixed text-on-primary-fixed-variant font-caption text-caption font-semibold">발표 완료</span>
+</div>
+<div class="flex items-baseline gap-1 my-1">
+<span class="font-metric-display text-metric-display text-primary font-light">총 6.0</span>
+<span class="font-body-md text-body-md text-on-surface-variant">억 달러</span>
+</div>
+<div class="pt-2 bg-surface-container-low px-2 py-1 mt-2 flex items-center justify-between">
+<span class="font-caption text-caption text-on-surface-variant">25.12 (3억$) + 26.03 (3억$)</span>
+<span class="font-caption text-caption text-on-surface-variant">신규 프레스·성능 향상</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest p-4 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">수출 비중 (2026.1~10월)</span>
+<span class="inline-flex items-center px-1.5 py-0.5 bg-error-container text-on-error-container font-caption text-caption font-semibold">극단적 편중</span>
+</div>
+<div class="flex items-baseline gap-1 my-1">
+<span class="font-metric-display text-metric-display text-on-surface font-light">98.1</span>
+<span class="font-body-md text-body-md text-on-surface-variant">%</span>
+</div>
+<div class="pt-2 bg-surface-container-low px-2 py-1 mt-2 flex items-center justify-between">
+<span class="font-caption text-caption text-on-surface-variant">수출 423,680대 vs 내수 8,294대</span>
+<span class="font-caption text-caption text-on-surface-variant">완성차 기준</span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest p-4 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">GMTCK 엔지니어 역량</span>
+<span class="inline-flex items-center px-1.5 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed-variant font-caption text-caption font-semibold">글로벌 거점</span>
+</div>
+<div class="flex items-baseline gap-1 my-1">
+<span class="font-metric-display text-metric-display text-tertiary font-light">3,000+</span>
+<span class="font-body-md text-body-md text-on-surface-variant">명</span>
+</div>
+<div class="pt-2 bg-surface-container-low px-2 py-1 mt-2 flex items-center justify-between">
+<span class="font-caption text-caption text-on-surface-variant">청라 버추얼 엔지니어링 랩</span>
+<span class="font-caption text-caption text-tertiary font-semibold">10개 벤치 랩 통합</span>
+</div>
+</div>
+</div>
+<!-- SECTION 3: FINANCIAL PERFORMANCE & PROFITABILITY DYNAMICS -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+<!-- Visual Bar & Trend Chart -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-6 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 gap-2">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">연도별 재무 추이 및 수익성 분석 (2022~2025)</h2>
+<p class="font-caption text-caption text-on-surface-variant">단위: 억 원 | NICE평가정보 재게시 재무자료 기반</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1 font-caption text-caption text-on-surface">
+<span class="w-3 h-3 bg-secondary"></span>매출액 (/10)
+            </span>
+<span class="flex items-center gap-1 font-caption text-caption text-on-surface">
+<span class="w-3 h-3 bg-primary"></span>영업이익
+            </span>
+<span class="flex items-center gap-1 font-caption text-caption text-on-surface">
+<span class="w-3 h-3 bg-tertiary"></span>당기순이익
+            </span>
+</div>
+</div>
+<!-- Inline SVG Visualization of 4-Year Financial Trajectory -->
+<div class="w-full h-64 my-2">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 760 220">
+<!-- Grid Lines -->
+<line class="text-surface-container-highest" stroke="currentColor" stroke-dasharray="2,2" x1="40" x2="740" y1="20" y2="20"></line>
+<line class="text-surface-container-highest" stroke="currentColor" stroke-dasharray="2,2" x1="40" x2="740" y1="70" y2="70"></line>
+<line class="text-surface-container-highest" stroke="currentColor" stroke-dasharray="2,2" x1="40" x2="740" y1="120" y2="120"></line>
+<line class="text-surface-container-highest" stroke="currentColor" stroke-dasharray="2,2" x1="40" x2="740" y1="170" y2="170"></line>
+<line class="text-outline-variant" stroke="currentColor" x1="40" x2="740" y1="200" y2="200"></line>
+<!-- Y Axis labels -->
+<text class="fill-current text-on-surface-variant font-caption text-[10px]" text-anchor="end" x="35" y="24">25,000</text>
+<text class="fill-current text-on-surface-variant font-caption text-[10px]" text-anchor="end" x="35" y="74">15,000</text>
+<text class="fill-current text-on-surface-variant font-caption text-[10px]" text-anchor="end" x="35" y="124">8,000</text>
+<text class="fill-current text-on-surface-variant font-caption text-[10px]" text-anchor="end" x="35" y="174">0</text>
+<!-- 2022 Group (Base X: 110) -->
+<!-- Revenue scaled (/10): 9010.2 -> h: 72 -->
+<rect class="fill-secondary opacity-80" height="72" width="22" x="75" y="128"></rect>
+<rect class="fill-primary" height="22" width="22" x="100" y="178"></rect>
+<rect class="fill-tertiary" height="17" width="22" x="125" y="183"></rect>
+<text class="fill-current text-on-surface font-label-sm text-[12px] font-semibold" text-anchor="middle" x="111" y="215">2022년</text>
+<!-- 2023 Group (Base X: 280) -->
+<rect class="fill-secondary opacity-80" height="110" width="22" x="245" y="90"></rect>
+<rect class="fill-primary" height="108" width="22" x="270" y="92"></rect>
+<rect class="fill-tertiary" height="120" width="22" x="295" y="80"></rect>
+<text class="fill-current text-on-surface font-label-sm text-[12px] font-semibold" text-anchor="middle" x="281" y="215">2023년</text>
+<!-- 2024 Group (Base X: 450) -->
+<rect class="fill-secondary opacity-80" height="115" width="22" x="415" y="85"></rect>
+<rect class="fill-primary" height="109" width="22" x="440" y="91"></rect>
+<rect class="fill-tertiary" height="177" width="22" x="465" y="23"></rect>
+<text class="fill-current text-on-surface font-label-sm text-[12px] font-semibold" text-anchor="middle" x="451" y="215">2024년 (법인세효과)</text>
+<!-- 2025 Group (Base X: 620) -->
+<rect class="fill-secondary opacity-80" height="101" width="22" x="585" y="99"></rect>
+<rect class="fill-primary" height="39" width="22" x="610" y="161"></rect>
+<rect class="fill-tertiary" height="35" width="22" x="635" y="165"></rect>
+<text class="fill-current text-on-surface font-label-sm text-[12px] font-semibold" text-anchor="middle" x="621" y="215">2025년 (급감)</text>
+<!-- Callout Note on 2024 Tax benefit -->
+<path class="text-tertiary" d="M 476 22 L 515 10 L 580 10" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+<text class="fill-current text-tertiary font-caption text-[11px] font-semibold" x="585" y="14">법인세 수익 +6,422억 포함</text>
+</svg>
+</div>
+<!-- Data Table (Strict Carbon Style) -->
+<div class="overflow-x-auto mt-4">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+<th class="py-2.5 px-3">재무 구분 (단위: 억 원)</th>
+<th class="py-2.5 px-3 text-right">2022년</th>
+<th class="py-2.5 px-3 text-right">2023년</th>
+<th class="py-2.5 px-3 text-right">2024년</th>
+<th class="py-2.5 px-3 text-right">2025년</th>
+<th class="py-2.5 px-3 text-right">24→25 변동률</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-highest">
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-3 font-semibold text-on-surface">매출액</td>
+<td class="py-2 px-3 text-right tabular-nums">90,102</td>
+<td class="py-2 px-3 text-right tabular-nums">137,339</td>
+<td class="py-2 px-3 text-right tabular-nums">143,771</td>
+<td class="py-2 px-3 text-right tabular-nums font-semibold">126,128</td>
+<td class="py-2 px-3 text-right text-error tabular-nums">-12.3%</td>
+</tr>
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="py-2 px-3 font-semibold text-on-surface">영업이익</td>
+<td class="py-2 px-3 text-right tabular-nums">2,766</td>
+<td class="py-2 px-3 text-right tabular-nums">13,506</td>
+<td class="py-2 px-3 text-right tabular-nums">13,572</td>
+<td class="py-2 px-3 text-right tabular-nums font-semibold text-error">4,897.9</td>
+<td class="py-2 px-3 text-right text-error font-semibold tabular-nums">-63.9%</td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-3 font-semibold text-on-surface">당기순이익</td>
+<td class="py-2 px-3 text-right tabular-nums">2,101</td>
+<td class="py-2 px-3 text-right tabular-nums">14,995</td>
+<td class="py-2 px-3 text-right tabular-nums">22,077*</td>
+<td class="py-2 px-3 text-right tabular-nums font-semibold">4,313.6</td>
+<td class="py-2 px-3 text-right text-error tabular-nums">-80.5%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="mt-4 pt-3 bg-surface-container-low p-3 text-on-surface-variant font-caption text-caption flex items-start gap-2">
+<span class="material-symbols-outlined text-outline text-[16px] shrink-0 mt-0.5">info</span>
+<span>
+          *2024년 당기순이익에는 약 6,422억 원의 법인세 수익이 일시 반영되어 있어 본업 이익과 구분 해석이 필수적임. 4년 연속 흑자를 시현했으나 본업 영업수익성이 급감하여 단순 흑자 여부만으로 구조적 정상화를 단정할 수 없음.
+        </span>
+</div>
+</div>
+<!-- Financial Diagnosis & Method Card -->
+<div class="lg:col-span-4 bg-surface-container-lowest p-6 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-secondary text-[24px]">verified</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">재무 정상화 판단 4대 기준</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+          공개 재무정보 기준 연결·별도 확인 및 실제 현금 흐름 기반 다각도 검증 기준입니다.
+        </p>
+<div class="space-y-3 font-body-sm text-body-sm">
+<div class="p-3 bg-surface-container-low">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface mb-1">
+<span>1. 본업 수익 창출력 (영업이익)</span>
+<span class="text-error font-semibold">경고</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">2024년 1조 3,572억 → 2025년 4,898억 원으로 -63.9% 하락. 원가 및 관세 리스크 노출 반영.</p>
+</div>
+<div class="p-3 bg-surface-container-low">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface mb-1">
+<span>2. 최종 손익 왜곡 검증 (순이익)</span>
+<span class="text-secondary font-semibold">검증 완료</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">2024년 순익 2.2조 중 법인세 효과(약 6,422억) 착시 제거 필요. 2025년 4,314억 원으로 정상화.</p>
+</div>
+<div class="p-3 bg-surface-container-low">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface mb-1">
+<span>3. 영업활동 현금흐름</span>
+<span class="text-on-surface-variant font-semibold">추가 대조</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">회계상 흑자가 실제 운전자본 및 시설 재투자 현금으로 유입되는지 감사보고서 원문 확인 필요.</p>
+</div>
+<div class="p-3 bg-surface-container-low">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface mb-1">
+<span>4. 차입금 및 자본 체력</span>
+<span class="text-on-surface-variant font-semibold">지속 모니터링</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">2018년 경영정상화 이후 누적 결손금 해소 및 부채비율 추이를 파악해야 장기 투자여력 입증 가능.</p>
+</div>
+</div>
+</div>
+<div class="mt-4 p-3 bg-primary-container text-on-primary-container">
+<span class="block font-label-sm text-label-sm font-semibold mb-0.5">판단 원칙</span>
+<span class="font-caption text-caption">흑자 여부만으로 사업구조 정상화를 단정할 수 없으며, 영업이익률, OCF, 차입금 추세를 종합 판단해야 합니다.</span>
+</div>
+</div>
+</div>
+<!-- SECTION 4: PRODUCTION CAPACITY & $600M INVESTMENT ROADMAP -->
+<div class="w-full bg-surface-container-lowest p-6 shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between pb-4 gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">precision_manufacturing</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">글로벌 생산 거점 현황 및 6억 달러 투자 로드맵</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+          부평·창원 연간 50만 대 생산능력 유지 및 소형 SUV 시장 독점적 점유율
+        </p>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+          누적 차량 생산: <strong>약 1,340만 대</strong>
+</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+          핵심 2차종 누적 생산: <strong>200만 대 돌파</strong>
+</span>
+</div>
+</div>
+<!-- Production Metrics & Timeline Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-2">
+<!-- Left: Dual Core Model Powerhouse -->
+<div class="lg:col-span-4 bg-surface-container-low p-4 flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant block mb-2">한국 생산 핵심 모델 점유율</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3">트랙스 크로스오버 &amp; 트레일블레이저</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between font-body-sm text-body-sm text-on-surface mb-1">
+<span>미국 소형 SUV 세그먼트 점유율</span>
+<span class="font-semibold text-primary">약 43%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2.5">
+<div class="bg-primary h-2.5" style="width: 43%"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant mt-1 block">GM 미국 소형 SUV 판매 점유율 기준 압도적 1위</span>
+</div>
+<div class="p-3 bg-surface-container-lowest">
+<span class="font-caption text-caption text-on-surface-variant block">2025년 미국 현지 판매 실적 (GM 발표)</span>
+<span class="font-metric-display text-[28px] text-on-surface font-light block my-0.5">422,792대</span>
+<span class="font-caption text-caption text-tertiary font-semibold">국내 수출 물량의 핵심 드라이버</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 text-on-surface-variant font-caption text-caption">
+          ⚠️ 주의: 연간 생산능력(50만 대)은 최대 가동 한도이며 실제 가동률이나 향후 배정 지속성을 보장하지 않음.
+        </div>
+</div>
+<!-- Center & Right: Timeline of Investments & Milestones -->
+<div class="lg:col-span-8 flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant block mb-3">설비 현대화 투자 타임라인 및 차기 과제</span>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+<!-- Step 1 -->
+<div class="p-4 bg-surface-container-low flex flex-col justify-between">
+<div>
+<span class="px-2 py-0.5 bg-surface-container-high text-on-surface-variant font-caption text-caption">2025년 12월</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-2">1차 발표</h4>
+<div class="font-metric-display text-[24px] text-primary font-normal my-1">3억 달러</div>
+<p class="font-caption text-caption text-on-surface-variant">한국 생산 소형 SUV 공장 성능 향상, 상품성 및 기술 경쟁력 강화</p>
+</div>
+<span class="inline-block mt-3 font-caption text-caption text-tertiary font-semibold">집행 착수 단계</span>
+</div>
+<!-- Step 2 -->
+<div class="p-4 bg-surface-container-low flex flex-col justify-between">
+<div>
+<span class="px-2 py-0.5 bg-surface-container-high text-on-surface-variant font-caption text-caption">2026년 3월</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-2">2차 발표</h4>
+<div class="font-metric-display text-[24px] text-primary font-normal my-1">추가 3억$</div>
+<p class="font-caption text-caption text-on-surface-variant">새로운 프레스 머신 도입 및 프레스·조립 공정 시설 현대화</p>
+</div>
+<span class="inline-block mt-3 font-caption text-caption text-primary font-semibold">총 6억 달러 확정</span>
+</div>
+<!-- Step 3 -->
+<div class="p-4 bg-surface-container-low flex flex-col justify-between">
+<div>
+<span class="px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed font-caption text-caption">2026년 9월</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-2">뷰익 진출</h4>
+<div class="font-metric-display text-[24px] text-secondary font-normal my-1">브랜드 확장</div>
+<p class="font-caption text-caption text-on-surface-variant">4개 멀티 브랜드 완성, 엘렉트라 E7 공개로 내수 라인업 다변화</p>
+</div>
+<span class="inline-block mt-3 font-caption text-caption text-secondary font-semibold">내수 포트폴리오</span>
+</div>
+<!-- Step 4 -->
+<div class="p-4 bg-surface-container-high flex flex-col justify-between">
+<div>
+<span class="px-2 py-0.5 bg-error-container text-on-error-container font-caption text-caption font-semibold">2027년 3Q 목표</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-2">차세대 유치</h4>
+<div class="font-metric-display text-[24px] text-error font-normal my-1">9BXX-2</div>
+<p class="font-caption text-caption text-on-surface-variant">노사 교섭 목표 기준 차세대 글로벌 소형 CUV 국내 유치 확정 분기</p>
+</div>
+<span class="inline-block mt-3 font-caption text-caption text-error font-semibold">미확정 핵심 과제</span>
+</div>
+</div>
+</div>
+<!-- Analytical Constraints Callout -->
+<div class="mt-4 p-3 bg-surface-container text-on-surface font-body-sm text-body-sm flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">announcement</span>
+<span><strong>투자 해석의 3대 한계:</strong> ① 발표액≠집행 완료액 ② 설비 현대화≠신규 차종 자동 배정 ③ 2028년 이후 생산 보장 불가</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant shrink-0">검증 지표: 가동률·생산성·불량률·집행률</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 5: SALES STRUCTURE & 4 MULTI-BRAND PORTFOLIO -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+<!-- Extreme Asymmetry Visualization -->
+<div class="lg:col-span-4 bg-surface-container-lowest p-6 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">판매 구조의 극단적 비대칭</h3>
+<span class="px-2 py-0.5 bg-error-container text-on-error-container font-caption text-caption font-semibold">수출 의존도 98.1%</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mb-4">
+          2026년 1~10월 누적 판매 실적 (완성차 기준, 캐딜락 제외)
+        </p>
+<!-- Donut / Proportion Graphic -->
+<div class="flex flex-col items-center justify-center my-4">
+<div class="relative w-44 h-44 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<!-- Background / 내수 (1.9%) -->
+<path class="text-error" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="100, 100" stroke-width="4.5"></path>
+<!-- 수출 (98.1%) -->
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="98.1, 100" stroke-linecap="butt" stroke-width="4.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-xl text-headline-xl text-on-surface font-semibold">98.1%</span>
+<span class="font-caption text-caption text-on-surface-variant">해외 수출</span>
+</div>
+</div>
+</div>
+<div class="space-y-2 mt-2">
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 bg-primary"></span>
+<span class="text-on-surface font-medium">수출 판매</span>
+</div>
+<div class="text-right">
+<span class="font-semibold text-on-surface tabular-nums">423,680대</span>
+<span class="font-caption text-caption text-on-surface-variant block">98.1%</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 bg-error"></span>
+<span class="text-on-surface font-medium">내수 판매</span>
+</div>
+<div class="text-right">
+<span class="font-semibold text-on-surface tabular-nums">8,294대</span>
+<span class="font-caption text-caption text-on-surface-variant block">1.9%</span>
+</div>
+</div>
+</div>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-4 pt-2">
+        ※ 미국 시장 수요, 관세 정책(소급 인하 vs 트럭 25%), 환율 변동에 직접 노출된 취약한 내수 방어벽 구조.
+      </p>
+</div>
+<!-- 4 Multi-Brand Portfolio Cards -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-6 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 gap-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">4개 멀티 브랜드 포트폴리오 전략 체계</h3>
+<p class="font-caption text-caption text-on-surface-variant">대중부터 하이엔드 픽업·럭셔리 EV까지 타깃 세분화</p>
+</div>
+<span class="inline-flex items-center px-2 py-1 bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+            수익성 &amp; 자기잠식(Cannibalization) 검증 필요
+          </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+<!-- Chevrolet -->
+<div class="p-4 bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">CHEVROLET (쉐보레)</span>
+<span class="px-2 py-0.5 bg-primary-fixed text-on-primary-fixed-variant font-caption text-caption font-semibold">대중적 메인스트림</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium">국내 생산 모델 중심 (부평·창원 가동 지탱)</p>
+<ul class="font-caption text-caption text-on-surface-variant space-y-1 mt-2 list-disc list-inside">
+<li>핵심 모델: 트랙스 크로스오버, 트레일블레이저</li>
+<li>역할: 대량 생산 및 해외 수출 물량 전담 기반</li>
+<li>과제: 국내 시장 볼륨 회복 및 수익성 균형</li>
+</ul>
+</div>
+<div class="mt-3 pt-2 text-right">
+<span class="font-caption text-caption text-primary font-semibold">국내 생산 거점의 핵심 기반</span>
+</div>
+</div>
+<!-- Cadillac -->
+<div class="p-4 bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">CADILLAC (캐딜락)</span>
+<span class="px-2 py-0.5 bg-surface-container-highest text-on-surface font-caption text-caption font-semibold">럭셔리 프리미엄</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium">전동화 플래그십 및 최고급 하이엔드 수요 공략</p>
+<ul class="font-caption text-caption text-on-surface-variant space-y-1 mt-2 list-disc list-inside">
+<li>핵심 라인업: 에스컬레이드, 에스컬레이드 IQ, 리릭(Lyriq)</li>
+<li>역할: GM 글로벌 전동화 기술력과 브랜드 위상 견인</li>
+<li>과제: 수입 럭셔리 수입차 시장 점유율 확대 및 차별화</li>
+</ul>
+</div>
+<div class="mt-3 pt-2 text-right">
+<span class="font-caption text-caption text-on-surface-variant font-semibold">브랜드 가치 제고 리드</span>
+</div>
+</div>
+<!-- GMC -->
+<div class="p-4 bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">GMC</span>
+<span class="px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed font-caption text-caption font-semibold">프리미엄 SUV·픽업</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium">아메리칸 정통 풀사이즈·중형 프리미엄 라인업 확장</p>
+<ul class="font-caption text-caption text-on-surface-variant space-y-1 mt-2 list-disc list-inside">
+<li>기존 시에라(Sierra) 기반 확립 후 아카디아·캐니언 확대</li>
+<li>허머 EV(Hummer EV) 도입을 통한 슈퍼 EV 포지셔닝</li>
+<li>유의: 2026년 최초 진출이 아닌 기 진출 사업의 확장임</li>
+</ul>
+</div>
+<div class="mt-3 pt-2 text-right">
+<span class="font-caption text-caption text-secondary font-semibold">프리미엄 틈새 수익성 극대화</span>
+</div>
+</div>
+<!-- Buick -->
+<div class="p-4 bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">BUICK (뷰익)</span>
+<span class="px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed-variant font-caption text-caption font-semibold">프리미엄 메인스트림</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium">2026년 신규 진출 발표 및 엘렉트라 E7 공개</p>
+<ul class="font-caption text-caption text-on-surface-variant space-y-1 mt-2 list-disc list-inside">
+<li>쉐보레와 캐딜락 간 미드 프리미엄 세그먼트 공략</li>
+<li>순수전기 크로스오버 엘렉트라 E7 공개로 전동화 강조</li>
+<li>유의: 런칭 발표와 실제 출고·인도 실적은 분리 검증 필요</li>
+</ul>
+</div>
+<div class="mt-3 pt-2 text-right">
+<span class="font-caption text-caption text-tertiary font-semibold">2026 신규 라인업 가동</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Strategic Risk of Multi-Brand -->
+<div class="mt-4 p-3 bg-surface-container text-on-surface font-body-sm text-body-sm flex items-start gap-2">
+<span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">warning</span>
+<div>
+<span class="font-semibold text-error">멀티 브랜드 리스크 요인:</span>
+<span>
+            전시장·정비 교육·부품 재고 비용 가중 및 기존 쉐보레 고객과의 자기잠식(Cannibalization) 가능성 상존. 단순 수입 모델 도입이 국내 생산 및 고용에 미치는 순효과는 제한적이므로 차량당 실질 마진 검증이 필수적임.
+          </span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 6: ENGINEERING R&D & SERVICE INFRASTRUCTURE -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+<!-- GMTCK & Cheongna Virtual Engineering Lab -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-6 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[24px]">biotech</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">GMTCK 및 청라 버추얼 엔지니어링 랩</h3>
+<span class="font-caption text-caption text-on-surface-variant">GM 글로벌 엔지니어링 핵심 5대 가상 검증 시설</span>
+</div>
+</div>
+<span class="px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed font-caption text-caption font-semibold">25.12 개소</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+          사내 분산되어 있던 10개 벤치 랩을 청라 주행시험장 내로 통합. 가상 시뮬레이션과 실차 주행시험을 직접 연동하여 글로벌 소형 SUV 및 전동화 플랫폼 개발 효율 극대화.
+        </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-body-sm text-body-sm">
+<div class="p-3 bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold block mb-0.5">1. 전기 시스템 벤치</span>
+<span class="font-caption text-caption text-on-surface-variant">차량 E/E 구성 요소 및 차세대 SDV 소프트웨어 통합 기능 검증</span>
+</div>
+<div class="p-3 bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold block mb-0.5">2. VR 워크업 스테이션</span>
+<span class="font-caption text-caption text-on-surface-variant">몰입형 3D 가상 환경을 통한 사전 차량 시각화 및 부품 설계 정합성 검토</span>
+</div>
+<div class="p-3 bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold block mb-0.5">3. DiL (Driver-in-the-Loop) 시뮬레이터</span>
+<span class="font-caption text-caption text-on-surface-variant">가상 주행 모사 환경에서 운전자 반응 속도 및 차량 동적 횡·종방향 특성 평가</span>
+</div>
+<div class="p-3 bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold block mb-0.5">4. 추진·섀시 HIL 랩</span>
+<span class="font-caption text-caption text-on-surface-variant">하드웨어-가상 모델 결합을 통한 파워트레인 및 섀시 제어 로직 선행 검증</span>
+</div>
+</div>
+<div class="mt-3 p-3 bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">5. 에너지 및 배출가스 시험 랩</span>
+<span class="font-caption text-caption text-tertiary font-semibold">친환경 연비·배출가스 평가</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">글로벌 환경 규제 충족을 위한 실시간 에너지 소비 효율 및 정밀 배출가스 검증 체계 가동</p>
+</div>
+</div>
+<div class="mt-4 pt-2 text-on-surface-variant font-caption text-caption">
+        ⚠️ 성과 해석의 한계: 가상 검증이 실제 실차 충돌·내구·주행 시험을 100% 대체할 수 없으며, 개발 기간·비용 절감치는 정량 검증이 지속되어야 함.
+      </div>
+</div>
+<!-- Super Cruise & Service Network Realignment -->
+<div class="lg:col-span-5 flex flex-col space-y-4">
+<!-- Super Cruise Card -->
+<div class="bg-surface-container-lowest p-6 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">첨단 운전자 보조 시스템: 슈퍼크루즈</h4>
+<span class="px-2 py-0.5 bg-primary-container text-on-primary-container font-caption text-caption font-semibold">국내 적용</span>
+</div>
+<div class="p-3 bg-surface-container-low mb-3">
+<div class="flex items-baseline justify-between">
+<span class="font-label-sm text-label-sm text-on-surface">지원 고속도로망 (허머 EV 기준)</span>
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">약 23,000 km</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">정밀 라이다 지도 기반 국내 주요 간선도로망 지원</span>
+</div>
+<div class="font-caption text-caption text-on-surface-variant space-y-1">
+<p>• <strong>규정상 주의:</strong> 운전자가 상시 전방을 주시해야 하는 주행 보조 장치이며 자율주행(Level 3 이상) 시스템이 아님.</p>
+<p>• 도로 환경, 날씨, 소프트웨어 및 정밀 지도 업데이트 주기에 따라 사용 제약 발생 가능.</p>
+</div>
+</div>
+</div>
+<!-- Service Network Realignment Card -->
+<div class="bg-surface-container-lowest p-6 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">서비스 네트워크 재편 및 품질</h4>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface font-caption text-caption">노사합의 (26.03)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">
+            대전·전주·창원 3개 직영 거점을 <strong>정비서비스기술센터</strong>로 전환 유지하고, 인천 부평 하이테크센터 확대 운영 합의.
+          </p>
+<div class="p-3 bg-surface-container-low flex items-center justify-between">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface font-semibold">KSQI 자동차 A/S 부문</span>
+<span class="font-caption text-caption text-on-surface-variant">한국산업 서비스품질지수 8년 연속 1위</span>
+</div>
+<span class="font-metric-display text-[24px] text-tertiary font-normal">8년 연속</span>
+</div>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-2">
+          ※ KSQI는 고객접점 응대 조사 결과이며, 직영망 재편 이후 지방 거주 고객의 정비 접근성과 실제 재수리율 모니터링이 필수적임.
+        </p>
+</div>
+</div>
+</div>
+<!-- SECTION 7: STRATEGIC RISKS MATRIX & 7 MONITORING INDICATORS -->
+<div class="w-full bg-surface-container-lowest p-6 shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[24px]">gavel</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">주요 리스크 매트릭스 및 통상 환경</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+          미국 관세 재편, 2028년 기본협약 만료, 후속 차종 유치 등 중장기 불확실성
+        </p>
+</div>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+        전략적 리스크 6대 축 종합 대조
+      </span>
+</div>
+<!-- Risks Table -->
+<div class="overflow-x-auto mt-2">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+<th class="py-2.5 px-3">리스크 요인</th>
+<th class="py-2.5 px-3">확인된 현황 (Fact Base)</th>
+<th class="py-2.5 px-3">사업적 영향 및 세부 분석</th>
+<th class="py-2.5 px-3 text-right">대응 심각도</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-highest">
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-3 font-semibold text-on-surface">1. 미국 자동차 관세</td>
+<td class="py-3 px-3 text-on-surface-variant">한국산 승용차·부품 15% 소급 인하 발표 / 픽업트럭 25% 유지 발표 (산업부 25.12)</td>
+<td class="py-3 px-3 text-on-surface-variant">품목·원산지 비율에 따른 실질 관세 비용 차등. 2025년 영업이익 급감의 단일 원인으로 단정 불가하나 원가 압박 요인 작용.</td>
+<td class="py-3 px-3 text-right"><span class="px-2 py-0.5 bg-error-container text-on-error-container font-caption text-caption font-semibold">높음 (High)</span></td>
+</tr>
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="py-3 px-3 font-semibold text-on-surface">2. 수출 편중 구조</td>
+<td class="py-3 px-3 text-on-surface-variant">2026년 1~10월 수출 비중 약 98.1% (수출 423,680대 vs 내수 8,294대)</td>
+<td class="py-3 px-3 text-on-surface-variant">북미 경기 변동, 해상 물류 운임 급등, 원달러 환율 변화에 실적이 즉각 연동되어 내수 완충 기능 부재.</td>
+<td class="py-3 px-3 text-right"><span class="px-2 py-0.5 bg-error-container text-on-error-container font-caption text-caption font-semibold">극심 (Critical)</span></td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-3 font-semibold text-on-surface">3. 2028년 기본협약 만료</td>
+<td class="py-3 px-3 text-on-surface-variant">2018년 GM 본사-산업은행 경영정상화 기본협약 10년 약정 2028년 5월 만료 예정</td>
+<td class="py-3 px-3 text-on-surface-variant">지분 매각 제한 해제 및 산은의 거부권 만료에 따른 생산 기지 지속성 재협상 불가피. 신규 협약 필요.</td>
+<td class="py-3 px-3 text-right"><span class="px-2 py-0.5 bg-surface-container-highest text-on-surface font-caption text-caption font-semibold">중장기 핵심</span></td>
+</tr>
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="py-3 px-3 font-semibold text-on-surface">4. 9BXX-2 차세대 프로그램</td>
+<td class="py-3 px-3 text-on-surface-variant">국내 유치 추진 중이나 2026.11 기준 국내 생산 배정 미확정 (노사 27년 3Q 유치 목표)</td>
+<td class="py-3 px-3 text-on-surface-variant">트랙스·트레일블레이저 수명주기 이후 부평·창원 가동을 책임질 후속 볼륨 모델 부재 리스크.</td>
+<td class="py-3 px-3 text-right"><span class="px-2 py-0.5 bg-error-container text-on-error-container font-caption text-caption font-semibold">최우선 과제</span></td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-3 font-semibold text-on-surface">5. 서비스 네트워크 개편</td>
+<td class="py-3 px-3 text-on-surface-variant">3개 거점(대전·전주·창원) 정비서비스기술센터 전환 및 부평 하이테크센터 확대</td>
+<td class="py-3 px-3 text-on-surface-variant">직영 축소에 따른 지방권 복합 결함 정비 접근성 저하 및 협력 지정정비공장 기술 지원 부하.</td>
+<td class="py-3 px-3 text-right"><span class="px-2 py-0.5 bg-surface-container-highest text-on-surface font-caption text-caption font-semibold">관리 필요</span></td>
+</tr>
+<tr class="bg-surface-container-low hover:bg-surface-container transition-colors">
+<td class="py-3 px-3 font-semibold text-on-surface">6. 신규 수입 브랜드 마진</td>
+<td class="py-3 px-3 text-on-surface-variant">GMC 허머 EV, 뷰익 엘렉트라 E7 등 고가 완성차 수입 확대</td>
+<td class="py-3 px-3 text-on-surface-variant">국내 고용 기여도 제한적이며, 부품 재고·전시장 운영 고정비 대비 실제 대당 마진 실증 필요.</td>
+<td class="py-3 px-3 text-right"><span class="px-2 py-0.5 bg-surface-container-highest text-on-surface font-caption text-caption font-semibold">모니터링</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- SECTION 8: 7 FUTURE MONITORING INDICATORS & DECISION RULE -->
+<div class="w-full bg-surface-container-lowest p-6 shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">fact_check</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">7대 지속가능성 검증 모니터링 체크리스트</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+          계획 발표가 아닌 실제 생산·재무·품질 데이터를 기반으로 한 전략적 판단 프레임워크
+        </p>
+</div>
+<div class="px-3 py-1 bg-primary text-on-primary font-label-sm text-label-sm">
+        의사결정 기준: 실측 데이터 기반
+      </div>
+</div>
+<!-- 7 Monitoring Indicator Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-2">
+<!-- Item 1 -->
+<div class="p-4 bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-error font-semibold">지표 01</span>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface font-caption text-caption">차세대 생산</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">9BXX-2 국내 배정</h4>
+<p class="font-caption text-caption text-on-surface-variant">확인 목적: 2028년 이후 부평·창원 공장의 연속 가동을 보장하는 차세대 물량 최종 확정 여부.</p>
+</div>
+<div class="mt-3 pt-2 text-right">
+<span class="font-caption text-caption text-on-surface font-semibold">목표: 2027 3Q 내 확정</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-4 bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-primary font-semibold">지표 02</span>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface font-caption text-caption">수익성 방어</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">영업이익 및 OCF</h4>
+<p class="font-caption text-caption text-on-surface-variant">확인 목적: 2025년 급감(-63.9%)한 영업이익 반등 및 영업활동 현금흐름의 플러스 전환 여부.</p>
+</div>
+<div class="mt-3 pt-2 text-right">
+<span class="font-caption text-caption text-on-surface font-semibold">매출액 대비 OP Margin</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-4 bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">지표 03</span>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface font-caption text-caption">통상 리스크</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">대미 관세 실질 영향</h4>
+<p class="font-caption text-caption text-on-surface-variant">확인 목적: 승용차 15% 소급 인하 vs 트럭 25% 유지에 따른 제품군별 실제 관세 납부 비용 파악.</p>
+</div>
+<div class="mt-3 pt-2 text-right">
+<span class="font-caption text-caption text-on-surface font-semibold">차종별 세부 관세율</span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="p-4 bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-secondary font-semibold">지표 04</span>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface font-caption text-caption">내수 시장</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">멀티 브랜드 판매 실적</h4>
+<p class="font-caption text-caption text-on-surface-variant">확인 목적: 뷰익·GMC 도입 후 월간 신규 판매량 증가율 및 브랜드 간 카니발라이제이션 여부.</p>
+</div>
+<div class="mt-3 pt-2 text-right">
+<span class="font-caption text-caption text-on-surface font-semibold">월간 실판매 &amp; 대당 마진</span>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="p-4 bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">지표 05</span>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface font-caption text-caption">서비스 품질</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">고객 접근성 및 재수리율</h4>
+<p class="font-caption text-caption text-on-surface-variant">확인 목적: 직영 센터 3개 전환 이후 지역별 정비 대기 기간, 수리 만족도 및 A/S 재수리 비율.</p>
+</div>
+<div class="mt-3 pt-2 text-right">
+<span class="font-caption text-caption text-on-surface font-semibold">KSQI 1위 유지 및 VOC</span>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="p-4 bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-primary font-semibold">지표 06</span>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface font-caption text-caption">투자 집행</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">6억 달러 설비 집행률</h4>
+<p class="font-caption text-caption text-on-surface-variant">확인 목적: 프레스 라인 및 공장 업그레이드 발표액의 실제 분기별 회계 집행 및 라인 생산성 향상률.</p>
+</div>
+<div class="mt-3 pt-2 text-right">
+<span class="font-caption text-caption text-on-surface font-semibold">CAPEX 집행률·가동률</span>
+</div>
+</div>
+<!-- Item 7 -->
+<div class="p-4 bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">지표 07</span>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface font-caption text-caption">R&amp;D 성과</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">GMTCK 가상검증 양산 전환</h4>
+<p class="font-caption text-caption text-on-surface-variant">확인 목적: 청라 버추얼 랩의 가상 시뮬레이션 결과가 실제 양산 차량 결함 감소 및 개발기간 단축으로 연결되는지 검증.</p>
+</div>
+<div class="mt-3 pt-2 text-right">
+<span class="font-caption text-caption text-on-surface font-semibold">설계 변경률·시험주기</span>
+</div>
+</div>
+<!-- Summary Rule Box -->
+<div class="p-4 bg-surface-container-high flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold block mb-2">전략 검증 의사결정 원칙</span>
+<p class="font-caption text-caption text-on-surface-variant">
+            단순 언론 발표나 중장기 청사진이 아닌, <strong>실제 생산량·재무 손익·고객 품질 데이터</strong>의 수치적 개선 여부를 바탕으로 GM 한국사업장의 지속가능성을 최종 판단함.
+          </p>
+</div>
+<div class="mt-3 pt-2">
+<span class="inline-flex items-center px-2 py-0.5 bg-primary text-on-primary font-caption text-caption font-semibold">
+            Data-Driven Strategy
+          </span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 9: 5 CORE CONCLUSIONS & FINAL VERDICT -->
+<div class="w-full bg-surface-container-high p-6 shadow-sm flex flex-col justify-between">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between pb-4 gap-2">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">Executive Conclusion</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">GM 한국사업장 중장기 경쟁력 결정을 위한 5대 변수</h2>
+</div>
+<span class="px-3 py-1 bg-surface-container text-on-surface font-label-sm text-label-sm">
+        전략 분석 종합 제언
+      </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-3 my-2">
+<div class="p-4 bg-surface-container-lowest flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-primary font-semibold block mb-1">변수 01</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-2">수출 거점 수익성 방어</h4>
+<p class="font-caption text-caption text-on-surface-variant">관세 재편·환율·원가 상승 충격을 흡수하고 2024년 수준의 본업 영업이익을 회복할 수 있는가?</p>
+</div>
+</div>
+<div class="p-4 bg-surface-container-lowest flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-error font-semibold block mb-1">변수 02</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-2">차세대 9BXX-2 확보</h4>
+<p class="font-caption text-caption text-on-surface-variant">2027년 3분기 목표 시점까지 후속 모델의 부평·창원 생산 배정을 최종 확정 지을 수 있는가?</p>
+</div>
+</div>
+<div class="p-4 bg-surface-container-lowest flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold block mb-1">변수 03</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-2">멀티 브랜드 실질 성과</h4>
+<p class="font-caption text-caption text-on-surface-variant">GMC·뷰익 등 수입 라인업 확장이 단순 쇼케이스를 넘어 유의미한 내수 판매량과 마진을 창출하는가?</p>
+</div>
+</div>
+<div class="p-4 bg-surface-container-lowest flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold block mb-1">변수 04</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-2">서비스망 고객 경험</h4>
+<p class="font-caption text-caption text-on-surface-variant">정비서비스기술센터 3곳 전환 후 지방 권역 접근성과 고급 정비 품질 만족도를 지켜내는가?</p>
+</div>
+</div>
+<div class="p-4 bg-surface-container-lowest flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold block mb-1">변수 05</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-2">GMTCK 양산 효율 전환</h4>
+<p class="font-caption text-caption text-on-surface-variant">청라 버추얼 랩 10개 시설 통합이 글로벌 양산 모델의 개발 기간 단축 및 원가 경쟁력으로 귀결되는가?</p>
+</div>
+</div>
+</div>
+<!-- Final Verdict Callout -->
+<div class="mt-4 p-4 bg-primary text-on-primary flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div>
+<span class="font-headline-sm text-headline-sm block mb-1">종합 결론: 탁월한 생산·R&amp;D 역량 기반, 2028년 이후 지속성은 실증 필수</span>
+<p class="font-body-sm text-body-sm text-on-primary/90">
+          GM 한국사업장은 연간 50만 대 생산설비와 GMTCK 3,000여 명의 R&amp;D 인프라를 갖춘 핵심 수출 거점입니다. 그러나 극단적 수출 편중(98.1%)과 2025년 수익성 급감(-63.9%) 속에서, 2028년 기본협약 만료 이후의 입지는 차세대 생산 차종(9BXX-2) 유치와 내수 판매 마진의 실증적 검증에 달려 있습니다.
+        </p>
+</div>
+<div class="shrink-0 flex items-center gap-2">
+<span class="inline-flex items-center px-3 py-1.5 bg-surface text-on-surface font-label-sm text-label-sm font-semibold">
+          평가: 지속 관찰 및 조건부 유지
+        </span>
+</div>
+</div>
+</div>
+<!-- SECTION 10: METADATA & DATA SOURCE AUDIT FOOTER -->
+<div class="w-full p-4 bg-surface-container-low text-on-surface-variant font-caption text-caption flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold block mb-0.5">데이터 출처 및 감사 권고사항</span>
+<span>
+        출처: GM 한국사업장 뉴스룸, GMTCK 공식 자료, NICE평가정보(사람인 재게시), 전국금속노동조합 한국GM지부 교섭자료, 산업통상자원부 관세 발표.
+      </span>
+<span class="block mt-0.5 text-outline">
+        제출 전 필수 확인 사항: ① 재무제표 연결·별도 기준 원문 대조 ② 2024년 법인세 주석 내역 ③ 브랜드별 분기 실판매 대수 ④ 6억 달러 투자 집행 영수 내역 ⑤ 9BXX-2 본사 배정안.
+      </span>
+</div>
+<div class="shrink-0 text-right font-caption text-caption text-on-surface-variant">
+<span>IBM Carbon Design System Specification</span>
+<span class="block font-semibold text-on-surface">GM Korea Strategy Dashboard v6.0</span>
+</div>
+</div>
+</div></main></div></body></html>
